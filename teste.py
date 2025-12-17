@@ -1,15 +1,45 @@
-# 1. Crie duas variáveis: valor_compra = 150 e assinante_prime = True
-valor_compra = 150
-assinante_prime = True
+# --- Definição das variáveis de entrada ---
+# Você pode mudar True/False aqui para testar os diferentes cenários:
 
 
-# 2. Usando o operador 'or', escreva uma estrutura if-else que verifique se o cliente receberá frete grátis.
+# Cenário de Teste 1 (Troque estes valores para testar):
+tem_convite = True
+tem_documento = True
 
 
-# A condição verifica se o valor da compra é maior que R$ 200,00 OU se o cliente é assinante Prime
-if valor_compra > 200 or assinante_prime:
-    # 3. Se pelo menos uma das condições for verdadeira, imprima a mensagem de sucesso
-    print("Parabéns! Você ganhou frete grátis.")
+# Cenário de Teste 2:
+# tem_convite = False
+# tem_documento = True
+
+
+# Cenário de Teste 3:
+# tem_convite = True
+# tem_documento = False
+
+
+# Cenário de Teste 4:
+# tem_convite = False
+# tem_documento = False
+
+
+
+
+# --- Lógica de Verificação ---
+
+
+if tem_convite and tem_documento:
+    # Caso 1: Tem ambos
+    mensagem = "Você pode entrar na festa, pois tem o convite e o documento"
+elif not tem_convite and tem_documento:
+    # Caso 2: Não tem convite, mas tem documento
+    mensagem = "Você não pode entrar na festa, pois faltou o convite"
+elif tem_convite and not tem_documento:
+    # Caso 3: Tem convite, mas não tem documento
+    mensagem = "Você não pode entrar na festa, pois faltou o documento"
 else:
-    # 4. Caso contrário (se nenhuma for verdadeira), imprima a mensagem de negação
-    print("Frete grátis não aplicável.")
+    # Caso 4: Não tem nenhum dos dois (usa o 'else' como fallback para o último caso possível)
+    mensagem = "Você não pode entrar na festa, pois faltou o convite e o documento"
+
+
+# --- Saída no Terminal ---
+print(mensagem)

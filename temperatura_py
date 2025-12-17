@@ -1,0 +1,10 @@
+# Definindo a temperatura
+temperatura = 18  #  pode mudar para testar outros valores
+
+
+# Verificando se está frio ou quente
+if temperatura < 20:
+    print("Está frio. Vou colocar casaco.")
+else:
+    print("Está quente. Vou de camiseta.")
+ 
